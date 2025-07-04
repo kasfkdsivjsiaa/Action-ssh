@@ -10,7 +10,6 @@ jobs:
       - run: chmod +x ./setup-ssh
       - run: sudo mkdir /mnt/runner-will-upload
       - run: echo 'runner:oi' | sudo chpasswd
-      - run: sudo chmod 777 /dev/kvm
       - run: sudo apt update
       - run: sudo apt install kubuntu-desktop xrdp -y
       - run: $GITHUB_WORKSPACE/setup-ssh
