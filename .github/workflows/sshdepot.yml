@@ -10,7 +10,7 @@ jobs:
       - run: chmod +x ./setup-ssh
       - run: sudo mkdir /mnt/runner-will-upload
       - run: sudo apt update
-      - run: sudo apt install qemu-kvm nano pbzip2 -y
+      - run: sudo apt install nano -y
       - run: $GITHUB_WORKSPACE/setup-ssh
         shell: bash
       - name: Upload
