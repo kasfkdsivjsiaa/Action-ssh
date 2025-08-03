@@ -109,6 +109,11 @@ jobs:
       run: |
         Invoke-WebRequest -Uri "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe" -OutFile .\cloudflared-windows-amd64.exe -UseBasicParsing
 
+    - name: Install Cloudflare Tunnel Service
+      run: |
+        .\cloudflared-windows-amd64.exe service install ${{ secrets.CLOUDFLARED_TOKEN }}
+      shell: pwsh
+      
     - name: Cloudflare run
       shell: pwsh
       run: |
